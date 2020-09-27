@@ -11,7 +11,7 @@
   	<h2>Register</h2>
   </div>
 
-  <form method="post" action="http://127.0.0.1:5000/signup/" id='register'>
+  <form action="/signup/ "method="post" id='register'>
   	   {%- for msg in get_flashed_messages() %}
 	  <div class="error">
 		  {{msg}}
@@ -43,7 +43,7 @@
   	  <button type="submit" class="btn" name="reg_user">Register</button>
   	</div>
   	<p>
-  		Already a member? <a href="http://127.0.0.1:5000/">Sign in</a>
+  		Already a member? <a href="/">Sign in</a>
   	</p>
   </form>
 </body>

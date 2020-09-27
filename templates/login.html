@@ -10,7 +10,7 @@
   	<h2>Login</h2>
   </div>
 
-  <form method="post" action="http://127.0.0.1:5000/login/">
+  <form action="/login" method="post">
 	  {%- for msg in get_flashed_messages() %}
 	  <div class="error">
 		  {{msg}}
@@ -29,7 +29,7 @@
   		<button type="submit" class="btn" name="login_user">Login</button>
   	</div>
   	<p>
-  		Not yet a member? <a href="http://127.0.0.1:5000/signup?id=1">Sign up</a>
+  		Not yet a member? <a href="/signup">Sign up</a>
   	</p>
   </form>
 </body>

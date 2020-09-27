@@ -34,7 +34,7 @@ def index():
         return render_template('index.html', first_name=first_name, last_name=last_name, email=email)
 
 
-@app.route('/login/', methods=['POST'])
+@app.route('/login', methods=('GET','POST'))
 def login():
     email = request.form['email']
     password = request.form['password']
@@ -58,7 +58,7 @@ def login():
         return render_template('login.html')
 
 
-@app.route('/signup/', methods=['POST', 'GET'])
+@app.route('/signup/', methods=('GET','POST'))
 def signup():
     if request.method == 'GET':
         return render_template('signup.html', first_name ='', last_name='', email='')
@@ -94,8 +94,8 @@ def logout():
     session.pop('first_name')
     session.pop('last_name')
     session.pop('email')
-    return redirect(url_for('index'))
+    return render_template('login.html')
 
 if __name__ == '__main__':
     db.create_all()
-    app.run(debug=True)
+    app.run()
