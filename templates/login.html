@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = 'style.css') }}">
+</head>
+<body>
+  <div class="header">
+  	<h2>Login</h2>
+  </div>
+
+  <form method="post" action="http://127.0.0.1:5000/login/">
+	  {%- for msg in get_flashed_messages() %}
+	  <div class="error">
+		  {{msg}}
+	  </div>
+	  {%- endfor %}
+  	  	<div class="input-group">
+  		<label>Email</label>
+  		<input type="email" name="email" required>
+
+  	</div>
+  	<div class="input-group">
+  		<label>Password</label>
+  		<input type="password" name="password" required>
+  	</div>
+  	<div class="input-group">
+  		<button type="submit" class="btn" name="login_user">Login</button>
+  	</div>
+  	<p>
+  		Not yet a member? <a href="http://127.0.0.1:5000/signup?id=1">Sign up</a>
+  	</p>
+  </form>
+</body>
+</html>

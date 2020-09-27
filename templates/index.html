@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = 'style.css') }}">
+</head>
+<body>
+<div class="header">
+	<h2>Home Page</h2>
+</div>
+<div class="content">
+            <p>Welcome!</strong></p>
+            <p>First Name: <strong>{{first_name}}</strong></p>
+            <p>Last Name: <strong>{{last_name}}</strong></p>
+            <p>Email: <strong>{{email}}</strong></p>
+    	<p> <a href="http://127.0.0.1:5000/logout/" style="color: red;">logout</a> </p>
+    </div>
+
+</body>
+</html>

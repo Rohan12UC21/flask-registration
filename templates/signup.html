@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = 'style.css') }}">
+</head>
+<body>
+ <div class="header">
+  	<h2>Register</h2>
+  </div>
+
+  <form method="post" action="http://127.0.0.1:5000/signup/" id='register'>
+  	   {%- for msg in get_flashed_messages() %}
+	  <div class="error">
+		  {{msg}}
+	  </div>
+	  {%- endfor %}
+
+      <div class="input-group">
+  	  <label>First Name</label>
+  	  <input type="text" name="first_name" value="{{first_name}}" placeholder="Enter Your First Name" required>
+	  </div>
+	  <div class="input-group">
+		<label>Last Name</label>
+  	  <input type="text" name="last_name" value="{{last_name}}" placeholder="Enter Your Last Name" required>
+	  </div> 
+	  </div>
+  	<div class="input-group">
+  	  <label>Email</label>
+  	  <input type="email" name="email" value="{{email}}" placeholder="Enter You Mail Id" required>
+  	</div>
+  	<div class="input-group">
+  	  <label>Password</label>
+  	  <input type="password" name="password" required>
+  	</div>
+  	<div class="input-group">
+  	  <label>Confirm password</label>
+  	  <input type="password" name="confirm" required>
+	  </div>
+	<div class="input-group">
+  	  <button type="submit" class="btn" name="reg_user">Register</button>
+  	</div>
+  	<p>
+  		Already a member? <a href="http://127.0.0.1:5000/">Sign in</a>
+  	</p>
+  </form>
+</body>
+</html>
