@@ -10,13 +10,19 @@
 <div class="header">
 	<h2>Home Page</h2>
 </div>
-<div class="content">
+<form method="post" action="/" enctype="multipart/form-data">
+<div>
             <p>Welcome!</strong></p>
             <p>First Name: <strong>{{first_name}}</strong></p>
             <p>Last Name: <strong>{{last_name}}</strong></p>
             <p>Email: <strong>{{email}}</strong></p>
+        </div>
+        <div class="input-group">
+            <input type="file" name="file" autocomplete="off" required>
+            <input type="submit" value="Submit">
+        </div>
     	<p> <a href="/logout/" style="color: red;">logout</a> </p>
-    </div>
-
+    
+</form>
 </body>
 </html>
